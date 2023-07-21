@@ -12,11 +12,11 @@ export default function Home(){
 
     
 
-      <header className="justify-between h-3/6 w-full  bg-lime-500 ">
-        <h1>Cookie Stand Admin</h1>
+      <header className="flex justify-start w-full h-1/4 bg-lime-500 ">
+        <h1 className="h-1/4">   Cookie Stand Admin  </h1>
       </header>
 
-      <main className='flex flex-col items-center '>
+      <main className= "grid  place-items-center h-56" >  
           <Form></Form>
       </main>
 
