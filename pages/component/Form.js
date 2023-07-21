@@ -7,28 +7,29 @@ function Form() {
         <div className="bg-lime-400 rounded-lg" style={myStyle}>
             <h1>create a cookie stand</h1>
 
-            <form>
-                <label>Location : <input type="text" name="location"></input></label> <br></br>
+            <form className="">
+                <label >Location : <input className="flex-initial w-96" type="text" name="location"></input></label> <br></br>
 
-                <div className="flex flex-row ">
+                <div className="flex flex-row justify-around">
 
-                <div>
-                <label>Minimum customer per hour : </label> <br></br>
-                <input type="text" name="minimum"></input>
+                    <div className="">
+                    <label>Minimum customer per hour : </label> <br></br>
+                    <input type="text" name="minimum"></input>
+                    </div>
+
+                    <div className="">
+                    <label>Maximum customer per hour : </label><br></br>
+                    <input type="text" name="maximum"></input>
+                    </div>
+
+                    <div className="">
+                    <label>Average sale per hour : </label><br></br>
+                    <input type="text" name="average"></input>
+                    </div>
+
+                    <button className="bg-lime-600  hover:bg-lime-700">Create</button>
                 </div>
-
-                <div>
-                <label>Maximum customer per hour</label><br></br>
-                <input type="text" name="maximum"></input>
-                </div>
-
-                <div>
-                <label>Average sale per hour</label><br></br>
-                <input type="text" name="average"></input>
-                </div>
-
-                <button className="bg-lime-500">Create</button>
-                </div>
+                <br></br>
             </form>
         </div>
     )
