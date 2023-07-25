@@ -27,6 +27,7 @@ export default function Home(){
 
     <main className= "grid  place-items-center h-56" >  
           <Form addCookieData={addCookieData} g_id={cookieData.length}/>
+          
           <CookieTable cookieData={cookieData} />
     </main>
 
