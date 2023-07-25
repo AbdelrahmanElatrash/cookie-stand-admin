@@ -14,6 +14,7 @@ export default function Home(){
     setCookieData([...cookieData,obj])
   }
 
+  
 
   return (
     <>
@@ -25,8 +26,8 @@ export default function Home(){
     <Header />
 
     <main className= "grid  place-items-center h-56" >  
-          <Form addCookieData={addCookieData}/>
-          <CookieTable cookieData={cookieData} g_id={cookieData.length} />
+          <Form addCookieData={addCookieData} g_id={cookieData.length}/>
+          <CookieTable cookieData={cookieData} />
     </main>
 
     <Footer/>

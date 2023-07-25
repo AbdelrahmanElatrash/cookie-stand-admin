@@ -1,9 +1,7 @@
 
 import { useState } from "react";
 
-const myStyle = {
-    border: "3px solid red" ,
-};
+
 
 
 function Form({addCookieData,g_id}) {
@@ -27,7 +25,7 @@ function Form({addCookieData,g_id}) {
     
     
     return (
-        <div className="bg-lime-400 rounded-lg" style={myStyle}>
+        <div className="bg-lime-400 rounded-lg m-4 mx-auto">
             <h1>create a cookie stand</h1>
 
             <form className="" onSubmit={handelFormData}>
@@ -37,22 +35,22 @@ function Form({addCookieData,g_id}) {
 
                 <div className="flex content-around flex-row">
 
-                    <div className="">
+                    <div className="m-4">
                     <label>Minimum customer per hour : </label> <br></br>
                     <input type="text" name="minimum"  ></input>
                     </div>
 
-                    <div className="">
+                    <div className="m-4">
                     <label>Maximum customer per hour : </label><br></br>
                     <input type="text" name="maximum" ></input>
                     </div>
 
-                    <div className="">
+                    <div className="m-4">
                     <label>Average sale per hour : </label><br></br>
                     <input type="text" name="average" ></input>
                     </div>
 
-                    <button className="bg-lime-600  hover:bg-lime-700" type="submit">Create</button>
+                    <button className="bg-lime-600  hover:bg-lime-700 m-4 rounded-lg w-16" type="submit">Create</button>
                 </div>
                 <br></br>
                 

@@ -1,5 +1,7 @@
 
 const CookieTable= ({cookieData})=>{
+
+    
     return (
         <>
          <table className="w-1/2 mx-auto my-8 text-2xl text-center bg-lime-400 rounded-lg">
@@ -21,6 +23,7 @@ const CookieTable= ({cookieData})=>{
                         <th className="border border-black">6pm</th>
                         <th className="border border-black">7pm</th>
                         <th className="border border-black">total</th>
+                        
                     </tr>
                 </thead>
                 <tbody>
@@ -42,11 +45,17 @@ const CookieTable= ({cookieData})=>{
                             <td className="border border-black"></td>
                             <td className="border border-black"></td>
                             <td className="border border-black"></td>
+                            
                         </tr>
                     ))
-
+                
                     }
                 </tbody>
+                <tfoot>
+                    <tr>
+
+                    </tr>
+                </tfoot>
             </table>
         </>
     )
