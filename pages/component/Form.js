@@ -1,25 +1,24 @@
-
-import { useState } from "react";
-
-
+import {arrNumber} from '../logic/random'
 
 
 function Form({addCookieData,g_id}) {
 
-    const [formData, setFormData]=useState({})
-    
-
 
     function handelFormData(event){
-        setFormData({id:g_id ,
+        event.preventDefault()
+        const arrNumbers= arrNumber()
+        let obj={id:g_id ,
                     location:event.target.location.value,
                     minimum:event.target.minimum.value,
                     maximum:event.target.maximum.value,
-                    average:event.target.average.value})
-
+                    average:event.target.average.value,
+                    averageSaleHour:arrNumbers
+                }
         
-        event.preventDefault()
-        addCookieData(formData)
+        
+        
+        addCookieData(obj)
+        
 
     }
     

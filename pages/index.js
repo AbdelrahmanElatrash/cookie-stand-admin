@@ -25,7 +25,7 @@ export default function Home(){
 
     <Header />
 
-    <main className= "grid  place-items-center h-56" >  
+    <main className= "grid overflow-y-auto place-items-center h-3/4" >  
           <Form addCookieData={addCookieData} g_id={cookieData.length}/>
           
           <CookieTable cookieData={cookieData} />
