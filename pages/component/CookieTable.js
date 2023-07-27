@@ -1,9 +1,10 @@
 import {calculateSum} from '../logic/sumTable'
 import { useEffect , useState } from 'react';
 
-const CookieTable= ({cookieData})=>{
+const CookieTable= ({cookieData,deleteData})=>{
 
-    const [totalResult, setTotalResult]=useState([])
+    const [totalResult, setTotalResult]=useState([])  
+    
 
     useEffect(() => {
         if(cookieData.length >0){
@@ -14,6 +15,8 @@ const CookieTable= ({cookieData})=>{
         
       },[cookieData]);
 
+    
+    
 
     if (cookieData.length == 0){
         return (
@@ -45,19 +48,24 @@ const CookieTable= ({cookieData})=>{
                             <th className="border border-black">6pm</th>
                             <th className="border border-black">7pm</th>
                             <th className="border border-black">total</th>
+                            <th className="border border-black">delete</th>
                             
                         </tr>
                     </thead>
                     <tbody  id="data" className="">
-                        {cookieData.map(item =>(
-                            <tr key={item.id} >
+                        {cookieData.map((item,index1) =>(
+                            <tr key={index1} >
                                 <td className="border border-black">{item.location}</td>
 
-                                {item.averageSaleHour.map((element,index)=>(
-                                     <td key={index} className="border border-black">{element}</td>))}
+                                {item.averageSaleHour.map((element,index2)=>(
+                                     <td key={index2} className="border border-black">{element}</td>
+                                ))}
 
                                 <td className="border border-black">{item.averageSaleHour.reduce((acc, curr) => acc + curr, 0)}</td>
-                                
+
+                                <td className="border border-black"><button onClick={()=>{deleteData(index1)}}
+                                                                    className='bg-lime-600  hover:bg-red-700 m-4 rounded-lg w-16'
+                                                                    >delete</button></td>
                                 
                             </tr>
                             

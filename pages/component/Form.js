@@ -1,13 +1,13 @@
 import {arrNumber} from '../logic/random'
 
 
-function Form({addCookieData,g_id}) {
+function Form({addCookieData}) {
 
 
     function handelFormData(event){
         event.preventDefault()
         const arrNumbers= arrNumber()
-        let obj={id:g_id ,
+        let obj={
                     location:event.target.location.value,
                     minimum:event.target.minimum.value,
                     maximum:event.target.maximum.value,

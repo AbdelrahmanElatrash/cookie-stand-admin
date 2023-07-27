@@ -16,13 +16,13 @@ export function calculateSum(id) {
           const cellValue = parseInt(cell.textContent);
           
           total +=cellValue
-          console.log(total)
+          
         }
         sumArray[col]=total
     }
     
     sumArray.shift()
-    console.log(sumArray)
+    sumArray.pop()
     return sumArray;
     
   }

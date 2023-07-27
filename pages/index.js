@@ -14,7 +14,26 @@ export default function Home(){
     setCookieData([...cookieData,obj])
   }
 
-  
+  const [refresh, setRefresh] = useState(false);
+
+  function handleReRenderComplete() {
+        if (refresh){
+            setRefresh(false);
+        }else{
+            setRefresh(true)
+        }
+        
+      }
+
+  const deleteData =(index)=>{
+    console.log(index)
+    console.log(cookieData)  
+
+    cookieData.splice(index, 1)
+    handleReRenderComplete()
+    console.log(cookieData)  
+    
+};  
 
   return (
     <>
@@ -25,10 +44,10 @@ export default function Home(){
 
     <Header />
 
-    <main className= "grid overflow-y-auto place-items-center h-3/4" >  
-          <Form addCookieData={addCookieData} g_id={cookieData.length}/>
+    <main className= "grid overflow-y-auto place-items-center h-3/4 my-9" >  
+          <Form addCookieData={addCookieData} />
           
-          <CookieTable cookieData={cookieData} />
+          <CookieTable cookieData={cookieData} deleteData={deleteData}/>
     </main>
 
     <Footer/>
