@@ -4,17 +4,30 @@ import Header from "./component/Header";
 import Footer from "./component/Footer";
 import CookieTable from "./component/CookieTable";
 import { useState } from "react";
+import {useAuth} from "../contexts/auth";
+import useResource from '../hooks/useResource';
+import Start from "./component/Start";
+// $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 
 export default function Home(){
 
 
   const [cookieData,setCookieData]=useState([])
 
-  const addCookieData=(obj)=>{
-    setCookieData([...cookieData,obj])
-  }
+  const {login, user, logout} = useAuth(); 
+  // const {resource, loading, createResource, deleteResource} = useResource();
+
+
+  
 
   const [refresh, setRefresh] = useState(false);
+
+  //$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+  const addCookieData=(obj)=>{
+
+      setCookieData([...cookieData,obj])
+}
 
   function handleReRenderComplete() {
         if (refresh){
@@ -26,12 +39,13 @@ export default function Home(){
       }
 
   const deleteData =(index)=>{
-    console.log(index)
-    console.log(cookieData)  
 
-    cookieData.splice(index, 1)
-    handleReRenderComplete()
-    console.log(cookieData)  
+      console.log(index)
+      console.log(cookieData)  
+
+      cookieData.splice(index, 1)
+      handleReRenderComplete()
+      console.log(cookieData)  
     
 };  
 
@@ -40,14 +54,25 @@ export default function Home(){
 
     <Head>
       <title> Cookie Stand Admin</title>
+
     </Head>
 
     <Header />
 
     <main className= "grid overflow-y-auto place-items-center h-3/4 my-9" >  
-          <Form addCookieData={addCookieData} />
+        {user ? (
+              <>
+              <Form addCookieData={addCookieData} />
           
-          <CookieTable cookieData={cookieData} deleteData={deleteData}/>
+              <CookieTable cookieData={cookieData} deleteData={deleteData}/>
+              </>
+        ): (
+          <>
+          <Start />
+          </>
+        )
+        }
+          
     </main>
 
     <Footer/>

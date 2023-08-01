@@ -22,7 +22,7 @@ export function calculateSum(id) {
     }
     
     sumArray.shift()
-    sumArray.pop()
+    
     return sumArray;
     
   }
