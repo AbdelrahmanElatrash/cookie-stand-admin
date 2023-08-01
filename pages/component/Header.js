@@ -14,8 +14,8 @@ const Header =()=>{
         <header className=" relative justify-start p-4 w-full  bg-lime-500 ">
         <h1 className="text-xl font-bold italic h-1/4">   Cookie Stand Admin  </h1><br></br>
 
-        <div class="relative w-full bottom-0 right-0">
-          <nav class="absolute bottom-0 right-0 ">
+        <div className="relative w-full bottom-0 right-0">
+          <nav className="absolute bottom-0 right-0 ">
             <ul  className="flex inline-flex items-baseline ">
 
               {user ? (

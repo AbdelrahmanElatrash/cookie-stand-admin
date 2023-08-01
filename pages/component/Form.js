@@ -1,26 +1,26 @@
 import {arrNumber} from '../logic/random'
+import {useAuth} from "../../contexts/auth";
 
 
-function Form({addCookieData}) {
+function Form({onCreate}) {
 
+    const {user} = useAuth(); 
 
     function handelFormData(event){
         event.preventDefault()
         const arrNumbers= arrNumber()
-        let obj={
+        const obj={
                     location:event.target.location.value,
-                    minimum:event.target.minimum.value,
-                    maximum:event.target.maximum.value,
-                    average:event.target.average.value,
-                    averageSaleHour:arrNumbers
-                }
-        
-        
-        
-        addCookieData(obj)
-        
+                    minimum_customers_per_hour:event.target.minimum.value,
+                    maximum_customers_per_hour:event.target.maximum.value,
+                    average_cookies_per_sale:event.target.average.value,
+                    hourly_sales:arrNumbers,
+                    owner:user.id
+                };
+        // console.log(obj);
+        onCreate(obj);
 
-    }
+    };
     
     
     return (
