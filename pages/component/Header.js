@@ -1,5 +1,5 @@
 import {useAuth} from "../../contexts/auth";
-
+import Droplogin from "./Droplogin";
 
 
 const Header =()=>{
@@ -7,7 +7,7 @@ const Header =()=>{
     const {login, user, logout} = useAuth();
 
     
-    const [username , password]=  ['root','root']
+    
 
 
     return (
@@ -21,11 +21,11 @@ const Header =()=>{
               {user ? (
                   <li className="mx-1.5 hover:bg-lime-700 rounded-lg bg-lime-50"><button onClick={logout}>logout</button></li>
               ):(
-                  <li className="mx-1.5 hover:bg-lime-700 rounded-lg bg-lime-50"><button onClick={()=>login(username,password)}>login</button></li>
+                  <li className="mx-1.5 hover:bg-lime-700 rounded-lg bg-lime-50"> <Droplogin/> </li>
               )
               }
               
-              <li className="mx-1.5 hover:bg-lime-700 rounded-lg bg-lime-50">about</li>
+              {/* <li className="mx-1.5 hover:bg-lime-700 rounded-lg bg-lime-50">about</li> */}
             </ul>
           </nav>
         </div>

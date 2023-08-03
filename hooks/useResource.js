@@ -46,7 +46,7 @@ export default function useResource() {
     }
 
 
-    async function updateResource(standInfo,id){    // create a flag form to update add show button in the table
+    async function updateResource(standInfo,id){    // create a (flag module/rout page)  form to update add show button in the table 
 
         if (!tokens) {
             return;
