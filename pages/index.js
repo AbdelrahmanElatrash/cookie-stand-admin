@@ -59,7 +59,7 @@ export default function Home(){
 
     <Header />
 
-    <main className= "grid overflow-y-auto place-items-center h-3/4 my-9" >  
+    <main className= "grid overflow-y-auto place-items-center h-3/4 my-12" >  
         {user ? (
               <>
               <Form onCreate={createResource}/>
